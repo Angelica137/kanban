@@ -51,17 +51,19 @@ class Board extends Component {
     ];
 
     return (
-      <BoardWrapper>
-        {columns.map((column) => (
-          <Column
-            key={column.id}
-            title={column.title}
-            loading={loading}
-            error={error}
-            tickets={data.filter((ticket) => ticket.column === column.id)}
-          />
-        ))}
-      </BoardWrapper>
+      <>
+        <BoardWrapper>
+          {columns.map((column) => (
+            <Column
+              key={column.id}
+              title={column.title}
+              loading={loading}
+              error={error}
+              tickets={data.filter((ticket) => ticket.column === column.id)}
+            />
+          ))}
+        </BoardWrapper>
+      </>
     );
   }
 }
