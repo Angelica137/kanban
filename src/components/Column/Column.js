@@ -15,9 +15,16 @@ const ColumnWrapper = styled.div`
   }
 `;
 
+const Title = styled.h2`
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: center;
+  border-bottom: 1px solid darkGrey;
+`;
+
 const Column = ({ title }) => (
   <ColumnWrapper>
-    <h2>this is a column</h2>
+    <Title>this is a column</Title>
   </ColumnWrapper>
 );
 
