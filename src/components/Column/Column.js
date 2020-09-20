@@ -24,7 +24,7 @@ const Title = styled.h2`
 
 const Column = ({ title }) => (
   <ColumnWrapper>
-    <Title>this is a column</Title>
+    <Title>{title}</Title>
   </ColumnWrapper>
 );
 
