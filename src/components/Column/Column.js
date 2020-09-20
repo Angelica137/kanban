@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Ticket from "../Ticket/Ticket";
 
 const ColumnWrapper = styled.div`
   list-style: none;
@@ -22,9 +23,23 @@ const Title = styled.h2`
   border-bottom: 1px solid darkGrey;
 `;
 
-const Column = ({ title }) => (
+const TicketsWrapper = styled.div`
+  padding: 5%;
+`;
+
+const Alert = styled.dv`
+  text-align: center;
+`;
+
+const Column = ({ tickets, loading, error, title }) => (
   <ColumnWrapper>
     <Title>{title}</Title>
+    {(loading || error) && <Alert>{loading ? "Loading..." : error}</Alert>}
+    <TicketsWrapper>
+      {tickets.map((ticket) => (
+        <Ticket key={ticket.id} ticket={ticket} />
+      ))}
+    </TicketsWrapper>
   </ColumnWrapper>
 );
 
