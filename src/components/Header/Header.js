@@ -19,7 +19,7 @@ const Title = styled.h1`
 
 const Header = () => (
   <HeaderWrapper>
-    <Title>This is your Kanban</Title>
+    <Title>This is your Kanban board</Title>
   </HeaderWrapper>
 );
 
