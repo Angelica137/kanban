@@ -12,9 +12,14 @@ const HeaderWrapper = styled.div`
   color: white;
 `;
 
+const Title = styled.h1`
+  height: 64px;
+  pointer-events: none;
+`;
+
 const Header = () => (
   <HeaderWrapper>
-    <h1>This is your Kanban</h1>
+    <Title>This is your Kanban</Title>
   </HeaderWrapper>
 );
 
