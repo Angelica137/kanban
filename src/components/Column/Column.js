@@ -5,7 +5,7 @@ const ColumnWrapper = styled.div`
   list-style: none;
   text-align: left;
   padding: 0;
-  background: LisghtGray;
+  background: LightGray;
   border-radious: 20px;
   min-height: 50vh;
   width: 2-vw;
