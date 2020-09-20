@@ -27,7 +27,7 @@ const TicketsWrapper = styled.div`
   padding: 5%;
 `;
 
-const Alert = styled.dv`
+const Alert = styled.div`
   text-align: center;
 `;
 
