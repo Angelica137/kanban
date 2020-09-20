@@ -8,7 +8,7 @@ const ColumnWrapper = styled.div`
   background: LightGray;
   border-radious: 20px;
   min-height: 50vh;
-  width: 2-vw;
+  width: 20vw;
 
   @media (max-width: 768px) {
     margin-bottom: 5%;
