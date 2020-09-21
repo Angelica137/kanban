@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+//import withDataFetching from "../withDataFetching";
 import Column from "../components/Column/Column";
 
 const BoardWrapper = styled.div`
