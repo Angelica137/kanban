@@ -22,12 +22,18 @@ const AppWrapper = styled.div`
 
 class App extends Component {
   render() {
+    const columns = [
+      { id: 1, title: "To Do" },
+      { id: 2, title: "In Progress" },
+      { id: 3, title: "Review" },
+      { id: 4, title: "Done" },
+    ];
     return (
       <>
         <GlobalStyle />
         <AppWrapper>
           <Header />
-          <Board />
+          <Board columns={columns} dataSource={"../../assets/data.json"} />
         </AppWrapper>
       </>
     );
