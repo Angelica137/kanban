@@ -20,7 +20,7 @@ const Title = styled.h2`
   width: 100%;
   padding-bottom: 10px;
   text-align: center;
-  border-bottom: 1px solid darkGrey;
+  border-bottom: 1px solid rgb(212, 212, 212);
 `;
 
 const TicketsWrapper = styled.div`
