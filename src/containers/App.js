@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import Header from "../components/Header/Header";
 import Board from "./Board";
+import Tickets from "./Tickets";
 import "./App.css";
 
 const GlobalStyle = createGlobalStyle`
@@ -22,12 +23,19 @@ const AppWrapper = styled.div`
 
 class App extends Component {
   render() {
+    const columns = [
+      { id: 1, title: "To Do" },
+      { id: 2, title: "In Progress" },
+      { id: 3, title: "Review" },
+      { id: 4, title: "Done" },
+    ];
     return (
       <>
         <GlobalStyle />
         <AppWrapper>
           <Header />
-          <Board />
+          <Board columns={columns} dataSource={"../../assets/data.json"} />
+          <Tickets dataSource={"../../assets/data.json"} />
         </AppWrapper>
       </>
     );
