@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function witDataFetching(WrappedComponent) {
-  return class extends React.Component {
+  class WithDataFetching extends React.Component {
     render() {
       const { data, loading, error } = this.state;
       return (
@@ -39,5 +39,8 @@ export default function witDataFetching(WrappedComponent) {
         });
       }
     }
-  };
+  }
+
+  WithDataFetching.displayName = `WithDataFething(${WrappedComponent.name})`;
+  return WithDataFetching;
 }
