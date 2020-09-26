@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const TicketWrapper = styled.div`
-  background: darkGray;
+  background: #e5e5e5;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 6px;
 
   &:not(:last-child) {
     margin-bottom: 5%;
