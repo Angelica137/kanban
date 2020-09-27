@@ -14,18 +14,24 @@ const BoardWrapper = styled.div`
   }
 `;
 
-const Board = ({ columns, loading, error, data }) => (
-  <BoardWrapper>
-    {columns.map((column) => (
-      <Column
-        key={column.id}
-        title={column.title}
-        loading={loading}
-        error={error}
-        tickets={data.filter((ticket) => ticket.column === column.id)}
-      />
-    ))}
-  </BoardWrapper>
-);
+class Board extends React.Component {
+  render() {
+    const { columns, loading, error, data } = this.props;
+
+    return (
+      <BoardWrapper>
+        {columns.map((column) => (
+          <Column
+            key={column.id}
+            title={column.title}
+            loading={loading}
+            error={error}
+            tickets={data.filter((ticket) => ticket.column === column.id)}
+          />
+        ))}
+      </BoardWrapper>
+    );
+  }
+}
 
 export default withDataFetching(Board);
