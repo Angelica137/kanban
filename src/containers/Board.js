@@ -21,6 +21,13 @@ class Board extends React.Component {
       tickets: [],
     };
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.data !== this.props.data) {
+      this.setState({ tickets: this.props.data });
+    }
+  }
+
   render() {
     const { columns, loading, error, data } = this.props;
 
