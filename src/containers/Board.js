@@ -28,6 +28,10 @@ class Board extends React.Component {
     }
   }
 
+  onDragStart = (e, id) => {
+    e.dataTransfer.setData("id", id);
+  };
+
   render() {
     const { columns, loading, error, data } = this.props;
 
@@ -39,7 +43,10 @@ class Board extends React.Component {
             title={column.title}
             loading={loading}
             error={error}
-            tickets={data.filter((ticket) => ticket.column === column.id)}
+            onDragStart={this.onDragStart}
+            tickets={this.state.tickets.filter(
+              (ticket) => ticket.column === column.id
+            )}
           />
         ))}
       </BoardWrapper>
