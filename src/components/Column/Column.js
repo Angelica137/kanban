@@ -31,8 +31,17 @@ const Alert = styled.div`
   text-align: center;
 `;
 
-const Column = ({ tickets, loading, error, onDragStart, title }) => (
-  <ColumnWrapper>
+const Column = ({
+  columnId,
+  tickets,
+  loading,
+  error,
+  onDragStart,
+  onDragOver,
+  onDrop,
+  title,
+}) => (
+  <ColumnWrapper onDragOver={onDragOver} onDrop={(e) => onDrop(e, columnId)}>
     <Title>{title}</Title>
     {(loading || error) && <Alert>{loading ? "Loading..." : error}</Alert>}
     <TicketsWrapper>

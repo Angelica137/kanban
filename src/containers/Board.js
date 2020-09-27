@@ -36,6 +36,20 @@ class Board extends React.Component {
     e.preventDefault();
   };
 
+  onDrop = (e, columnId) => {
+    const id = e.dataTransfer.getData("id");
+    const tickets = this.state.tickets.filter((ticket) => {
+      if (ticket.id === id) {
+        ticket.column = columnId;
+      }
+      return ticket;
+    });
+    this.setState({
+      ...this.state,
+      tickets,
+    });
+  };
+
   render() {
     const { columns, loading, error } = this.props;
 
@@ -44,11 +58,13 @@ class Board extends React.Component {
         {columns.map((column) => (
           <Column
             key={column.id}
+            columnId={column.id}
             title={column.title}
             loading={loading}
             error={error}
             onDragStart={this.onDragStart}
             onDragOver={this.onDragOver}
+            onDrop={this.onDrop}
             tickets={this.state.tickets.filter(
               (ticket) => ticket.column === column.id
             )}
