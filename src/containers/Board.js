@@ -48,6 +48,7 @@ class Board extends React.Component {
             loading={loading}
             error={error}
             onDragStart={this.onDragStart}
+            onDragOver={this.onDragOver}
             tickets={this.state.tickets.filter(
               (ticket) => ticket.column === column.id
             )}
