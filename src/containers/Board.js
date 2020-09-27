@@ -32,8 +32,12 @@ class Board extends React.Component {
     e.dataTransfer.setData("id", id);
   };
 
+  onDragOver = (e) => {
+    e.preventDefault();
+  };
+
   render() {
-    const { columns, loading, error, data } = this.props;
+    const { columns, loading, error } = this.props;
 
     return (
       <BoardWrapper>
