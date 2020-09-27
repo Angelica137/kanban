@@ -15,6 +15,12 @@ const BoardWrapper = styled.div`
 `;
 
 class Board extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      tickets: [],
+    };
+  }
   render() {
     const { columns, loading, error, data } = this.props;
 
