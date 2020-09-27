@@ -31,13 +31,13 @@ const Alert = styled.div`
   text-align: center;
 `;
 
-const Column = ({ tickets, loading, error, title }) => (
+const Column = ({ tickets, loading, error, onDragStart, title }) => (
   <ColumnWrapper>
     <Title>{title}</Title>
     {(loading || error) && <Alert>{loading ? "Loading..." : error}</Alert>}
     <TicketsWrapper>
       {tickets.map((ticket) => (
-        <Ticket key={ticket.id} ticket={ticket} />
+        <Ticket key={ticket.id} onDragStart={onDragStart} ticket={ticket} />
       ))}
     </TicketsWrapper>
   </ColumnWrapper>
